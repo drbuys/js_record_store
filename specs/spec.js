@@ -13,13 +13,15 @@ describe('Store', function() {
       record4 = new Record("Andrew Kenny", "Church Mouse in the Church House", 4.50);
       record5 = new Record("Postal Service", "Such Great Heights", 4.80);
       record6 = new Record("Styrofoam", "Misguided", 7.00);
+      store1 = new Store("Zaks", "Edinburgh", [], 500)
   });
 
-  it('should add an account', function(){
-      console.log(bank1);
-      bank1.addAccount(account1);
-      console.log(bank1);
-      assert.equal(1, bank1.accounts.length);
+  it('should add a record', function(){
+      console.log(store1);
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      console.log(store1);
+      assert.equal(2, store1.records.length);
   });
 
 
