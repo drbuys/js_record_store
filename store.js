@@ -15,16 +15,16 @@ Store.prototype = {
 
     listInventory: function() {
         for(var record in this.records) {
-            console.log(this.records[record].title);
+            console.log(this.records[record]);
         };
     },
 
     // listInventory: function() {
     //     var dave = this.records;
     //     dave.forEach(function(record) {
-    //         console.log(record);
+    //         console.log(dave.record);
     //     });
-    // }
+    // },
 
     sellRecord: function(record) {
         var i = this.records.indexOf(record);
