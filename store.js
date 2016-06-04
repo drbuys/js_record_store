@@ -14,8 +14,8 @@ Store.prototype = {
     },
 
     listInventory: function() {
-        for(var account in this.records) {
-            console.log(this.records[account].title);
+        for(var record in this.records) {
+            console.log(this.records[record].title);
         };
     },
 
@@ -32,6 +32,15 @@ Store.prototype = {
             this.balance -= this.records[i].price;
 	        this.records.splice(i, 1);
         };
+    },
+
+    finances: function() {
+        var stock = 0;
+        for(var record in this.records) {
+            stock += this.records[record].price;
+        }
+        console.log("The current value of store stock is: £" + stock.toFixed(2));
+        console.log("The current store balance is: £" + this.balance.toFixed(2));
     }
 
 

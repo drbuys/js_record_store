@@ -17,19 +17,19 @@ describe('Store', function() {
   });
 
   it('should add a record', function(){
-      console.log(store1);
+    //   console.log(store1);
       store1.addRecord(record1);
       store1.addRecord(record2);
-      console.log(store1);
+    //   console.log(store1);
       assert.equal(2, store1.records.length);
   });
 
-  it('should list and Inventory of stock for store', function(){
-      store1.addRecord(record1);
-      store1.addRecord(record2);
-      console.log(store1.listInventory());
-      assert.equal(2, store1.records.length);
-  });
+  // it('should list and Inventory of stock for store', function(){
+  //     store1.addRecord(record1);
+  //     store1.addRecord(record2);
+  //     console.log(store1.listInventory());
+  //     assert.equal(2, store1.records.length);
+  // });
 
   it('should sell a record and change balance appropriatley', function(){
       store1.addRecord(record1);
@@ -38,10 +38,21 @@ describe('Store', function() {
       store1.addRecord(record4);
       store1.addRecord(record5);
       store1.addRecord(record6);
-      console.log(store1.records);
+    //   console.log(store1.records);
           store1.sellRecord(record6);
-      console.log(store1.records);
+    //   console.log(store1.records);
       assert.equal(493, store1.balance);
+  });
+
+  it('should report the stores fincances', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      store1.addRecord(record3);
+      store1.addRecord(record4);
+      store1.addRecord(record5);
+      store1.addRecord(record6);
+      store1.finances();
+      assert.equal(500, store1.balance);
   });
 
 
