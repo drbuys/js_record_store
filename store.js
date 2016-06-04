@@ -29,8 +29,16 @@ Store.prototype = {
     sellRecord: function(record) {
         var i = this.records.indexOf(record);
             if(i != -1) {
-            this.balance -= this.records[i].price;
+            this.balance += this.records[i].price;
 	        this.records.splice(i, 1);
+        };
+    },
+
+    buyRecord: function(record) {
+        this.addRecord(record);
+        var i = this.records.indexOf(record);
+            if(i != -1) {
+            this.balance -= this.records[i].price;
         };
     },
 

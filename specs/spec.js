@@ -13,7 +13,9 @@ describe('Store', function() {
       record4 = new Record("Andrew Kenny", "Church Mouse in the Church House", 4.50);
       record5 = new Record("Postal Service", "Such Great Heights", 4.80);
       record6 = new Record("Styrofoam", "Misguided", 7.00);
-      store1 = new Store("Zaks", "Edinburgh", [], 500)
+      store1 = new Store("Zaks", "Edinburgh", [], 500);
+      store2 = new Store("Daves", "Balingry", [], 200);
+      customer1 = new Customer("Batman", [], 20);
   });
 
   it('should add a record', function(){
@@ -41,7 +43,7 @@ describe('Store', function() {
     //   console.log(store1.records);
           store1.sellRecord(record6);
     //   console.log(store1.records);
-      assert.equal(493, store1.balance);
+      assert.equal(507, store1.balance);
   });
 
   it('should report the stores fincances', function(){
@@ -55,6 +57,31 @@ describe('Store', function() {
       assert.equal(500, store1.balance);
   });
 
+  it('should buy records (customer)', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      store1.addRecord(record3);
+      store1.addRecord(record4);
+      store1.addRecord(record5);
+      store1.addRecord(record6);
+      customer1.buyRecord( store1, record6 )
+      assert.equal(507, store1.balance);
+      assert.equal(record6, customer1.records[0]);
+  });
+
+  it('should sell records (customer)', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      store1.addRecord(record3);
+      store1.addRecord(record4);
+      store1.addRecord(record5);
+      store1.addRecord(record6);
+      customer1.buyRecord( store1, record6 );
+      customer1.buyRecord( store1, record5 );
+      customer1.sellRecord( store2, record6 );
+      assert.equal(1, store2.records.length);
+      assert.equal(1, customer1.records.length);
+  });
 
 
 });
