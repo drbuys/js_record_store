@@ -10,7 +10,14 @@ var Store = function( name, city, records, balance ){
 Store.prototype = {
 
     addRecord: function(record) {
-        this.records.push(record);
+        var bloo = this.records.push(record);
+        return bloo[0];
+    },
+
+    listInventory: function() {
+        this.records.forEach(function(record) {
+            console.log(record.name);
+        });
     }
 
 };

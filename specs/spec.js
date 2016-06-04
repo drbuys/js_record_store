@@ -20,9 +20,15 @@ describe('Store', function() {
       console.log(store1);
       store1.addRecord(record1);
       store1.addRecord(record2);
-      console.log(store1);
+      console.log(record1);
       assert.equal(2, store1.records.length);
   });
+
+  // it('should list and Inventory of stock for store', function(){
+  //     store1.addRecord(record1);
+  //   //   store1.addRecord(record2);
+  //     assert.equal( record1, store1.listInventory());
+  // });
 
 
 
