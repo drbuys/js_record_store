@@ -20,15 +20,29 @@ describe('Store', function() {
       console.log(store1);
       store1.addRecord(record1);
       store1.addRecord(record2);
-      console.log(record1);
+      console.log(store1);
       assert.equal(2, store1.records.length);
   });
 
-  // it('should list and Inventory of stock for store', function(){
-  //     store1.addRecord(record1);
-  //   //   store1.addRecord(record2);
-  //     assert.equal( record1, store1.listInventory());
-  // });
+  it('should list and Inventory of stock for store', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      console.log(store1.listInventory());
+      assert.equal(2, store1.records.length);
+  });
+
+  it('should sell a record and change balance appropriatley', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      store1.addRecord(record3);
+      store1.addRecord(record4);
+      store1.addRecord(record5);
+      store1.addRecord(record6);
+      console.log(store1.records);
+          store1.sellRecord(record6);
+      console.log(store1.records);
+      assert.equal(493, store1.balance);
+  });
 
 
 

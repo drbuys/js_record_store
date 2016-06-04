@@ -10,16 +10,32 @@ var Store = function( name, city, records, balance ){
 Store.prototype = {
 
     addRecord: function(record) {
-        var bloo = this.records.push(record);
-        return bloo[0];
+        this.records.push(record);
     },
 
     listInventory: function() {
-        this.records.forEach(function(record) {
-            console.log(record.name);
-        });
+        for(var account in this.records) {
+            console.log(this.records[account].title);
+        };
+    },
+
+    // listInventory: function() {
+    //     var dave = this.records;
+    //     dave.forEach(function(record) {
+    //         console.log(record);
+    //     });
+    // }
+
+    sellRecord: function(record) {
+        var i = this.records.indexOf(record);
+            if(i != -1) {
+            this.balance -= this.records[i].price;
+	        this.records.splice(i, 1);
+        };
     }
 
+
 };
+
 
 module.exports = Store;
