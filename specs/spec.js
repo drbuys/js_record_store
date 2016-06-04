@@ -44,9 +44,10 @@ describe('Store', function() {
           store1.sellRecord(record6);
     //   console.log(store1.records);
       assert.equal(507, store1.balance);
+      assert.equal(5, store1.records.length);
   });
 
-  it('should report the stores fincances', function(){
+  it('should report the stores finances', function(){
       store1.addRecord(record1);
       store1.addRecord(record2);
       store1.addRecord(record3);
@@ -80,8 +81,8 @@ describe('Store', function() {
       customer1.buyRecord( store1, record5 );
       customer1.sellRecord( store2, record6 );
       assert.equal(1, store2.records.length);
+      assert.equal(4, store1.records.length);
       assert.equal(1, customer1.records.length);
   });
-
 
 });
