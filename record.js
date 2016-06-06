@@ -6,7 +6,7 @@ var Record = function( artist, title, price ){
     this.price = price;
 };
 
-Record.prototype = function(){
+Record.prototype = {
 
 };
 

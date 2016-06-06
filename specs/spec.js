@@ -26,12 +26,12 @@ describe('Store', function() {
       assert.equal(2, store1.records.length);
   });
 
-  // it('should list an Inventory of stock for store', function(){
-  //     store1.addRecord(record1);
-  //     store1.addRecord(record2);
-  //     console.log(store1.listInventory());
-  //     assert.equal(2, store1.records.length);
-  // });
+  it('should list an Inventory of stock for store', function(){
+      store1.addRecord(record1);
+      store1.addRecord(record2);
+      store1.listInventory();
+      assert.equal(2, store1.records.length);
+  });
 
   it('should sell a record and change balance appropriatley', function(){
       store1.addRecord(record1);
